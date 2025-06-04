@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh 'apt-get install -y docker.io'
+        //sh 'apt-get install -y docker.io'
         sh 'echo passed'
         //git branch: 'main', url: 'https://github.com/sivaprasad2646/Jenkins-Zero-To-Hero.git'
       }
