@@ -2,13 +2,13 @@ pipeline {
   agent {
     docker {
       image 'maven:3.9.5-eclipse-temurin-17'
-      sh 'apt-get update && apt-get install -y docker.io'
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
   stages {
     stage('Checkout') {
       steps {
+        sh 'apt-get update && apt-get install -y docker.io'
         sh 'echo passed'
         //git branch: 'main', url: 'https://github.com/sivaprasad2646/Jenkins-Zero-To-Hero.git'
       }
